@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <center>
+                <h1>Form Validation</h1>
+                <form id="myForm" onsubmit="return validateForm()">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <span id="emailError" style="color: red;"></span>
+                    <br></br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <span id="passwordError" style="color: red;"></span>
+                    <br></br>
+                    <button type="submit">Submit</button>
+                  </form>
+                  
+            </center>
+        </div>
+    </body>
+<script>
+function validateForm() {
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
+  emailError.textContent = "";
+  passwordError.textContent = "";
+  let isValid = true;
+  if (!emailInput.value.includes("@")) {
+    emailError.textContent = "Email must contain an @ symbol";
+    isValid = false;
+  }
+  if (passwordInput.value.length <6 ) {
+    passwordError.textContent = "Password cannot be less than 6 characters";
+    isValid = false;
+  }
+  return isValid;
+}
+
+    </script>
+</html>

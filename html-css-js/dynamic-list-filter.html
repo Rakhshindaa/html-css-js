@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div>
+        <center>
+            <h1>Dynamic List Filter</h1>
+            <!-- Corrected the function name from filter() to myFunction() -->
+            <input type="text" id="input" onkeyup="myFunction()" placeholder="Search for fruits...">
+            <ul id="searchList">
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Banana</li>
+                <li>Strawberry</li>
+                <li>Mango</li>
+                <li>Kiwi</li>
+                <li>Muskmelon</li>
+                <li>Avocado</li>
+                <li>Lemon</li>
+                <li>Lychee</li>
+                <li>Pineapple</li>
+                <li>Papaya</li>
+                <li>Cherry</li>
+                <li>Coconut</li>
+              </ul>
+              
+        </center>
+    </div>
+</body>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, i, txtValue;
+      input = document.getElementById('input');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("searchList");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        // Get the text content directly from the <li> element
+        txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = ""; // Show the list item
+        } else {
+          li[i].style.display = "none"; // Hide the list item
+        }
+      }
+    }
+</script>
+</html>

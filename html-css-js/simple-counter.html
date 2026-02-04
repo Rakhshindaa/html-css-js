@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div><center>
+        <h1>Simple counter</h1>
+        <p> Total times clicked:<span id="count"></span></p>
+   <button id="myButton">Click Here</button>
+    </center></div>
+   <script>
+      var count = 0;
+      var button = document.getElementById("myButton");
+      var countDisplay = document.getElementById("count");
+      button.addEventListener("click", function() {
+         count++;
+         countDisplay.innerHTML = count;
+      });
+   </script>
+</body>
+</html>

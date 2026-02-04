@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <center>
+                <h1>Character count with limit</h1>
+                <textarea id="myTextarea" maxlength="15" rows="8" columns="10"></textarea>
+                <p id="counter">0 / 15</p>
+                <p id="warning" style="color: red; display: none;">Limit exceeded!</p>
+            </center>
+        </div>
+    </body>
+    <script>
+        const textarea = document.getElementById('myTextarea');
+        const counter = document.getElementById('counter');
+        const warning = document.getElementById('warning');
+        const limit = 100;
+        textarea.addEventListener('input', () => {
+          const len = textarea.value.length;
+          counter.textContent = `${len} / ${limit}`;
+          if (len >= limit) {
+            counter.style.color = 'red';
+            warning.style.display = 'block';
+          } else {
+            counter.style.color = 'black';
+            warning.style.display = 'none';
+          }
+        });
+      </script>
+</html>

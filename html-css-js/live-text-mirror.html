@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Text Mirror</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { font-size: 16px; padding: 10px; width: 300px; }
+        p { font-size: 24px; color: blue; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div><center>
+    <h2>Type Below</h2>
+    <input type="text" id="userInput"  oninput="mirrorText()">
+    
+    <h3>Mirror Display</h3>
+    <p id="mirrorDisplay"></p>
+
+</center></div>
+    
+    <script>
+        function mirrorText() {
+            const inputVal = document.getElementById("userInput").value;
+            document.getElementById("mirrorDisplay").innerText = inputVal;
+        }
+    </script>
+
+</body>
+</html>

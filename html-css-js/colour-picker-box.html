@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker Box</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        #colorBox {
+            width: 200px; height: 200px;
+            background-color: lightgray;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .button-container { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <H1> <center>Colour Picker Box</center></H1>
+    <div id="colorBox"></div>
+
+    <div class="button-container">
+        <button onclick="changeColor('red')" style="background-color: red; color: white;">Red</button>
+        <button onclick="changeColor('green')" style="background-color: green; color: white;">Green</button>
+        <button onclick="changeColor('blue')" style="background-color: blue; color: white;">Blue</button>
+        <button onclick="changeColor('purple')" style="background-color: purple; color: white;">Purple</button>
+        <button onclick="changeColor('pink')" style="background-color: pink;">Pink</button>
+        <button onclick="changeColor('yellow')" style="background-color: yellow;">Yellow</button>
+        <button onclick="changeColor('brown')" style="background-color: brown; color: white;">Brown</button>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById('colorBox').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
